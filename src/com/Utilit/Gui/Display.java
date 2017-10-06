@@ -1,47 +1,52 @@
 package com.Utilit.Gui;
 
 import javax.swing.*;
+import javax.swing.ButtonGroup;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public class Display extends JFrame{
+    //Создаем конструктор рамки
+   public Display(){
+        // Тайтл
+        super("My Utlit. Choose a method");
+        // указываем что кнопка закрыть завершает работу программы
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //задаем размер рамки
+        setSize(600,600);
+        // Запрещаем менять размер рамки
+        setResizable(false);
+        // Задаем позиционирование рамки по середине
+        this.setLocationRelativeTo(null);
+        //this.pack();
 
-    public Display()
-    {
-        // создаем окно и задаем ему параметры
-        super("My Utilit");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setBounds(600,200,800,600);
-        createLable();
-        createBTN();
-
+       creatGUI();
     }
 
-    public void createLable(){
-        Container container = new Container();
+    private void creatGUI() {
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new BorderLayout());
 
-        JLabel lable = new JLabel("Выберите метод");
-        lable.setBounds(15,5,300,25);
-        container.add(lable);
+        JPanel sortEndSerch = new JPanel();
+        Border all = BorderFactory.createTitledBorder("Сортировать по совпадению");
+        sortEndSerch.setBorder(all);
+        mainPanel.add(sortEndSerch, BorderLayout.CENTER);
 
-        getContentPane().add(container);
-    }
+        JLabel label = new JLabel("Через файл/в ручную (Да через файл/Нет в ручную)  (Д/Н)");
+        sortEndSerch.add(label);
 
-    public void createBTN(){
-        Container container = new Container();
-
-        ButtonGroup radioBtnGroup = new ButtonGroup();
-        JRadioButton radioButton = new JRadioButton("SKU serch");
-        JRadioButton radioButton2 = new JRadioButton("Serch & sort");
-        radioButton.setBounds(15,30,300,25);
-        radioButton2.setBounds(15,60,300,25);
-        radioBtnGroup.add(radioButton);
-        radioBtnGroup.add(radioButton2);
-
-        container.add(radioButton);
+        ButtonGroup btnGroop = new ButtonGroup();
+        JRadioButton radioButton = new JRadioButton("Д");
+        JRadioButton radioButton2 = new JRadioButton("Н");
+        btnGroop.add(radioButton);
+        btnGroop.add(radioButton2);
         radioButton.setSelected(true);
-        container.add(radioButton2);
+        sortEndSerch.add(radioButton);
+        sortEndSerch.add(radioButton2);
 
-        getContentPane().add(container);
+        JButton btnOk = new JButton("Окей");
+
+        getContentPane().add(mainPanel);
 
     }
 }

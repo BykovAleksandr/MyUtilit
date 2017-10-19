@@ -1,7 +1,5 @@
 package com.Utilit.ParseFile;
 
-import com.Utilit.EquallyNotEqually.EquallyNotEqually;
-
 import java.util.ArrayList;
 
 public class ParseFile {

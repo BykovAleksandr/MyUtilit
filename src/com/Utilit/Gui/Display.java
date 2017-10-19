@@ -41,11 +41,13 @@ public class Display extends JFrame{
         JLabel festLabel = new JLabel("Что ищем");
         fileFolderArea.add(festLabel);
 
-        JLabel fileName = new JLabel("Выбранный фйл");
+        JLabel fileName = new JLabel("Выбранный файл");
         fileFolderArea.add(fileName);
 
         JButton ferstOpenBtn = new JButton("Загрузить файл");
         fileFolderArea.add(ferstOpenBtn);
+
+        actionBtn(ferstOpenBtn, fileName);
 
         JLabel secLabel = new JLabel("Где ищем");
         fileFolderArea.add(secLabel);
@@ -55,6 +57,8 @@ public class Display extends JFrame{
 
         getContentPane().add(mainPanel);
 
+
+/*
         ferstOpenBtn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileOpen = new JFileChooser();
@@ -67,5 +71,22 @@ public class Display extends JFrame{
                 }
             }
         });
+        */
+    }
+
+    public void actionBtn(JButton btnName, JLabel labbleName){
+        btnName.addActionListener(new ActionListener() {
+
+           public void actionPerformed(ActionEvent e) {
+               JFileChooser fileOpen = new JFileChooser();
+               int ret = fileOpen.showDialog(null, "Открыть файл");
+
+               if (ret == JFileChooser.APPROVE_OPTION){
+                   File file  = fileOpen.getSelectedFile();
+                   labbleName.setText(file.getName());
+                   Main.ferstFileFolder = file.getPath();
+               }
+           }
+       });
     }
 }

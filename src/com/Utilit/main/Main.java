@@ -1,12 +1,6 @@
 package com.Utilit.main;
 
-import com.Utilit.EquallyNotEqually.EquallyNotEqually;
-import com.Utilit.FileAction.ReadFile;
-import com.Utilit.FileAction.SaveFile;
 import com.Utilit.Gui.Display;
-import com.Utilit.ParseFile.ParseFile;
-
-import javax.swing.*;
 
 public class Main {
 

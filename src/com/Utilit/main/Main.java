@@ -2,17 +2,24 @@ package com.Utilit.main;
 
 import com.Utilit.EquallyNotEqually.EquallyNotEqually;
 import com.Utilit.FileAction.ReadFile;
+import com.Utilit.FileAction.SaveFile;
 import com.Utilit.Gui.Display;
 import com.Utilit.ParseFile.ParseFile;
 
+import javax.swing.*;
+
 public class Main {
+
+    public static String ferstFileFolder = "";
+    public static String secFileFolder;
+
     public static void main(String[] args) {
         //GUI part disable
-        /*Display mainDisplay = new Display();
-        mainDisplay.pack();
+        Display mainDisplay = new Display();
+        //mainDisplay.pack();
         mainDisplay.setVisible(true);
-        */
 
+/*
         ReadFile readFile = new ReadFile();
         readFile.readCSVFile("res//chtoishem.txt");
 
@@ -22,15 +29,12 @@ public class Main {
 
         EquallyNotEqually.sortEqulesNotEqules(ParseFile.serchSkuFromTxt, ParseFile.skuFromCSV);
 
-        for (String print : EquallyNotEqually.equles)
-            System.out.println("Есть совпадение: " + print);
+        SaveFile saveFile = new SaveFile(EquallyNotEqually.equles, "res//equll.txt");
 
-        System.out.println();
+        SaveFile saveFile1 = new SaveFile(EquallyNotEqually.notEqules, "res//not-equll.txt");
 
-        for (String print2 : EquallyNotEqually.notEqules)
-            System.out.println("Нет совпадений: " + print2);
-
-        System.out.println();
+        JOptionPane.showMessageDialog(null, "Готово!");
+        */
 
 
     }

@@ -5,12 +5,17 @@ import com.Utilit.main.Main;
 import javax.swing.*;
 import javax.swing.ButtonGroup;
 import javax.swing.border.Border;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 
 public class Display extends JFrame{
+
+    public static String ferstFileFolder = "";
+    public static String secFileFolder;
     //Создаем конструктор рамки
    public Display(){
         // Тайтл
@@ -46,8 +51,9 @@ public class Display extends JFrame{
 
         JButton ferstOpenBtn = new JButton("Загрузить файл");
         fileFolderArea.add(ferstOpenBtn);
+        String fsFilefolder = null;
 
-        actionBtn(ferstOpenBtn, fileName);
+        actionBtn(ferstOpenBtn, fileName, fsFilefolder);
 
         JLabel secLabel = new JLabel("Где ищем");
         fileFolderArea.add(secLabel);
@@ -74,17 +80,23 @@ public class Display extends JFrame{
         */
     }
 
-    public void actionBtn(JButton btnName, JLabel labbleName){
+    public void actionBtn(JButton btnName, JLabel labbleName, String fileFolder){
+
+       String tmpFilefolder = fileFolder;
         btnName.addActionListener(new ActionListener() {
 
            public void actionPerformed(ActionEvent e) {
                JFileChooser fileOpen = new JFileChooser();
+               FileNameExtensionFilter filter = new FileNameExtensionFilter("Txt file","txt");
+               fileOpen.addChoosableFileFilter(filter);
+
                int ret = fileOpen.showDialog(null, "Открыть файл");
 
                if (ret == JFileChooser.APPROVE_OPTION){
                    File file  = fileOpen.getSelectedFile();
                    labbleName.setText(file.getName());
-                   Main.ferstFileFolder = file.getPath();
+
+                   ferstFileFolder = file.getPath();
                }
            }
        });

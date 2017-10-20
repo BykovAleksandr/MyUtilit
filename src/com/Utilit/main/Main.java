@@ -4,9 +4,6 @@ import com.Utilit.Gui.Display;
 
 public class Main {
 
-    public static String ferstFileFolder = "";
-    public static String secFileFolder;
-
     public static void main(String[] args) {
         //GUI part disable
         Display mainDisplay = new Display();

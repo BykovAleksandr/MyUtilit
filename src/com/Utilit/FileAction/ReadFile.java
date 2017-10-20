@@ -19,6 +19,7 @@ public class ReadFile {
 
             while ((strInLine = reader.readLine()) != null){
 
+                //System.out.println(strInLine);
                 ParseFile.readAndParsSemicolonFile(strInLine);
             }
         }

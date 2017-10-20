@@ -22,7 +22,6 @@ public class SaveFile {
 
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, e);
-
             //e.printStackTrace();
         }
     }

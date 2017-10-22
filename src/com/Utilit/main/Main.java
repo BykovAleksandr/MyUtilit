@@ -32,7 +32,8 @@ public class Main {
 
         SaveFile saveFile1 = new SaveFile(EquallyNotEqually.notEqules, "res//not-equll.txt");
 
-        JOptionPane.showMessageDialog(null, "Готово!");
+
         */
+
     }
 }

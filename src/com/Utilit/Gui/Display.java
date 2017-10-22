@@ -1,6 +1,7 @@
 package com.Utilit.Gui;
 
 import com.Utilit.FileAction.ActionFileChooser;
+import com.Utilit.FileAction.BtnActionListenerSaveFale;
 
 import javax.swing.*;
 import javax.swing.ButtonGroup;
@@ -19,7 +20,7 @@ public class Display extends JFrame{
     //Создаем конструктор рамки
    public Display(){
         // Тайтл
-        super("My Utilit");
+        super("My Utilit версия:1.0");
         // указываем что кнопка закрыть завершает работу программы
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //задаем размер рамки
@@ -41,8 +42,7 @@ public class Display extends JFrame{
         Border all = BorderFactory.createTitledBorder("Равно не Равно");
         fileFolderArea.setBorder(all);
         mainPanel.add(fileFolderArea, BorderLayout.CENTER);
-
-//создаем 2 кнопки и лейблы к ним
+//создаем 2 кнопки и лейблы к ним------------------------------------------------------------
         JLabel festLabel = new JLabel("Что ищем");
         fileFolderArea.add(festLabel);
 
@@ -66,19 +66,15 @@ public class Display extends JFrame{
         ActionFileChooser actionFileChooser1 = new ActionFileChooser(secOpenBtn,secFileName);
 
         getContentPane().add(mainPanel);
-/*
-        ferstOpenBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JFileChooser fileOpen = new JFileChooser();
-                int ret = fileOpen.showDialog(null, "Открыть файл");
+//-------------------------------------------------------------------------------------------
 
-                if (ret == JFileChooser.APPROVE_OPTION){
-                   File file  = fileOpen.getSelectedFile();
-                   fileName.setText(file.getName());
-                   Main.ferstFileFolder = file.getPath();
-                }
-            }
-        });
-        */
+        JButton doneBtn = new JButton("Готово");
+        fileFolderArea.add(doneBtn);
+
+        JLabel versionLable = new JLabel("версия:1.0");
+        fileFolderArea.add(versionLable);
+
+
+        BtnActionListenerSaveFale btnAction = new BtnActionListenerSaveFale(doneBtn);
     }
 }

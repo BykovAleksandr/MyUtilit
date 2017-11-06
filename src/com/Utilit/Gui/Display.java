@@ -20,11 +20,11 @@ public class Display extends JFrame{
     //Создаем конструктор рамки
    public Display(){
         // Тайтл
-        super("My Utilit версия:1.0");
+        super("My Utilit версия:1.01");
         // указываем что кнопка закрыть завершает работу программы
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //задаем размер рамки
-        setSize(800,600);
+        setSize(800,300);
         // Запрещаем менять размер рамки
         setResizable(false);
         // Задаем позиционирование рамки по середине
@@ -71,7 +71,7 @@ public class Display extends JFrame{
         JButton doneBtn = new JButton("Готово");
         fileFolderArea.add(doneBtn);
 
-        JLabel versionLable = new JLabel("версия:1.0");
+        JLabel versionLable = new JLabel("версия:1.01");
         fileFolderArea.add(versionLable);
 
 
